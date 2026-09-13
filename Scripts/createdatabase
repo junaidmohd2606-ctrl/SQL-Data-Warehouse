@@ -1,0 +1,37 @@
+/*
+this code is to create new data base "DATAWARE_HOUSE_ANALYTICS" , the code will first check if DB is available or not if it is available then if dop 
+first then it create it ,additionally it create three schema ( layers) bronze, silver and gold
+
+WARNINGS 
+If you runs it without cautions it will drop entire data base which leads lose of all the tables and the schema within that database
+*/
+
+use master ;
+
+go 
+
+--- check if DB is available or not 
+IF EXISTS (SELECT 1 FROM SYS.DATABASE WHERE NAME ='DataWarehouseAnalytics')
+begin 
+DROP DATABASE  DataWarehouseAnalytics ;
+end 
+
+create  database DataWarehouseAnalytics;
+go
+
+--creating schema
+
+CREATE SCHEMA bronze;
+go 
+
+CREATE SCHEMA silver;
+go
+
+CREATE SCHEMA gold;
+go
+
+
+
+
+
+
