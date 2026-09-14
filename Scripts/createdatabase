@@ -29,9 +29,3 @@ go
 
 CREATE SCHEMA gold;
 go
-
-
-
-
-
-
